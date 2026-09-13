@@ -43,7 +43,7 @@ export default function Home() {
     <main>
       <section className="hero">
         <div className="hero-media">
-          <img src="/images/hero.webp" alt="Alfa Romeo in the Sussex workshop" />
+          <img src={`${import.meta.env.BASE_URL}images/hero.webp`} alt="Alfa Romeo in the Sussex workshop" />
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Established over 20 years</p>
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
           </div>
           <div className="photo">
-            <img src="/images/workshop.jpg" alt="Classic and modern Alfas in the workshop" />
+            <img src={`${import.meta.env.BASE_URL}images/workshop.jpg`} alt="Classic and modern Alfas in the workshop" />
           </div>
         </div>
       </section>

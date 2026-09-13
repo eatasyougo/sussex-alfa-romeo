@@ -8,7 +8,7 @@ function Layout() {
     <>
       <header className="site-header">
         <NavLink className="brand" to="/">
-          <img src="/images/logo.png" alt="Sussex Alfa Romeo" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Sussex Alfa Romeo" />
           <span className="brand-copy">
             <small>Hassocks · Mid Sussex</small>
             <strong>Sussex Alfa Romeo</strong>

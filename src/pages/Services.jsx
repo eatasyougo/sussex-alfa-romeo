@@ -59,7 +59,7 @@ export default function Services() {
             ))}
           </div>
           <div className="photo">
-            <img src="/images/workshop.jpg" alt="Work in the Sussex Alfa Romeo workshop" />
+            <img src={`${import.meta.env.BASE_URL}images/workshop.jpg`} alt="Work in the Sussex Alfa Romeo workshop" />
           </div>
         </div>
       </section>
@@ -75,7 +75,7 @@ export default function Services() {
             </p>
           </div>
           <div className="photo">
-            <img src="/images/frontage.jpg" alt="Alfa and Fiat garage frontage" />
+            <img src={`${import.meta.env.BASE_URL}images/frontage.jpg`} alt="Alfa and Fiat garage frontage" />
           </div>
         </div>
       </section>
