@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
+
 const services = [
   {
     n: "01",
@@ -59,7 +61,7 @@ export default function Services() {
             ))}
           </div>
           <div className="photo">
-            <img src={`${import.meta.env.BASE_URL}images/workshop.jpg`} alt="Work in the Sussex Alfa Romeo workshop" />
+            <img src={img("workshop.jpg")} alt="Work in the Sussex Alfa Romeo workshop" />
           </div>
         </div>
       </section>
@@ -75,7 +77,7 @@ export default function Services() {
             </p>
           </div>
           <div className="photo">
-            <img src={`${import.meta.env.BASE_URL}images/frontage.jpg`} alt="Alfa and Fiat garage frontage" />
+            <img src={img("frontage.jpg")} alt="Alfa 4C, Fiat 500 and Mito on the garage forecourt" />
           </div>
         </div>
       </section>

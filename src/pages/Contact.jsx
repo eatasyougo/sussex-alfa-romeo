@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Map from "../components/Map.jsx";
+
+const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -26,7 +29,7 @@ export default function Contact() {
       </section>
 
       <section className="section">
-        <div className="contact-grid">
+        <div className="find-us">
           <div className="contact-card">
             <h2>The garage</h2>
             <p className="lede" style={{ margin: "0.8rem 0 0" }}>
@@ -61,40 +64,46 @@ export default function Contact() {
               </a>
             </div>
           </div>
-
-          <form className="contact-card" onSubmit={onSubmit}>
-            <h3>Send a message</h3>
-            <label>
-              Name
-              <input name="name" required placeholder="Your name" />
-            </label>
-            <label>
-              Phone
-              <input name="phone" required placeholder="Mobile or landline" />
-            </label>
-            <label>
-              Vehicle
-              <input name="vehicle" placeholder="e.g. Giulia, 156, Panda" />
-            </label>
-            <label>
-              How can we help?
-              <textarea name="message" required placeholder="Servicing, MOT, diagnostics, cambelt…" />
-            </label>
-            <button className="btn btn-primary" type="submit">
-              Open email to send
-            </button>
-            {sent && <p className="toast">Your email app should open with the enquiry ready to send.</p>}
-          </form>
+          <div className="photo">
+            <img src={img("frontage.jpg")} alt="Look for the cream unit with Alfa Romeo, Fiat and Lancia cars outside" />
+          </div>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <iframe
-          className="map"
-          title="Sussex Alfa Romeo location"
-          src="https://maps.google.com/maps?q=Unit%20Z%20Ditchling%20Common%20Industrial%20Estate%20Hassocks%20BN6%208SG&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          loading="lazy"
-        />
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">Google Maps</p>
+            <h2>Sussex Alfa Romeo, Hassocks.</h2>
+          </div>
+        </div>
+        <Map />
+      </section>
+
+      <section className="section">
+        <form className="contact-card" onSubmit={onSubmit}>
+          <h3>Send a message</h3>
+          <label>
+            Name
+            <input name="name" required placeholder="Your name" />
+          </label>
+          <label>
+            Phone
+            <input name="phone" required placeholder="Mobile or landline" />
+          </label>
+          <label>
+            Vehicle
+            <input name="vehicle" placeholder="e.g. Giulia, 156, Panda" />
+          </label>
+          <label>
+            How can we help?
+            <textarea name="message" required placeholder="Servicing, MOT, diagnostics, cambelt…" />
+          </label>
+          <button className="btn btn-primary" type="submit">
+            Open email to send
+          </button>
+          {sent && <p className="toast">Your email app should open with the enquiry ready to send.</p>}
+        </form>
       </section>
     </main>
   );

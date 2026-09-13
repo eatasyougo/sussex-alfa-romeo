@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import Map from "../components/Map.jsx";
+
+const img = (file) => `${import.meta.env.BASE_URL}images/${file}`;
 
 const reasons = [
   {
@@ -27,14 +30,17 @@ const quotes = [
   {
     q: "Sussex Alfa really know their stuff. When someone knows how to solve your problem before you've finished describing it, you know you're in good hands.",
     a: "FP",
+    icon: "smile-1.png",
   },
   {
     q: "Cannot rate this man any higher than complete Alfa Guru. Great rapport and a font of Alfa knowledge. Great service.",
     a: "PR",
+    icon: "smile-2.png",
   },
   {
     q: "Extremely knowledgeable, great price, gave some wonderful advice and feedback. I will definitely be using Sussex Alfa Romeo again.",
     a: "MB",
+    icon: "smile-3.png",
   },
 ];
 
@@ -43,7 +49,7 @@ export default function Home() {
     <main>
       <section className="hero">
         <div className="hero-media">
-          <img src={`${import.meta.env.BASE_URL}images/hero.webp`} alt="Alfa Romeo in the Sussex workshop" />
+          <img src={img("hero.webp")} alt="Alfa Romeo in the Sussex workshop" />
         </div>
         <div className="hero-copy">
           <p className="eyebrow">Established over 20 years</p>
@@ -122,7 +128,21 @@ export default function Home() {
             </div>
           </div>
           <div className="photo">
-            <img src={`${import.meta.env.BASE_URL}images/workshop.jpg`} alt="Classic and modern Alfas in the workshop" />
+            <img src={img("frontage.jpg")} alt="Alfa Romeo 4C, Fiat 500 and Mito outside the Hassocks garage" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="photo-strip">
+          <div className="photo">
+            <img src={img("hero.webp")} alt="Alfa Romeo wheel and brake detail" />
+          </div>
+          <div className="photo">
+            <img src={img("workshop.jpg")} alt="Classic Alfa being worked on in the workshop" />
+          </div>
+          <div className="photo">
+            <img src={img("frontage.jpg")} alt="Italian cars on the forecourt" />
           </div>
         </div>
       </section>
@@ -137,11 +157,25 @@ export default function Home() {
         <div className="quote-grid">
           {quotes.map((item) => (
             <blockquote className="quote" key={item.a}>
+              <img src={img(item.icon)} alt="" />
               <p>“{item.q}”</p>
               <span>{item.a}</span>
             </blockquote>
           ))}
         </div>
+      </section>
+
+      <section className="section section-light">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">Find the garage</p>
+            <h2>Ditchling Common, Hassocks.</h2>
+          </div>
+          <p className="muted" style={{ maxWidth: "26rem" }}>
+            Unit Z, Ditchling Common Industrial Estate, BN6 8SG — look for the Alfa, Fiat and Lancia specialist on the estate.
+          </p>
+        </div>
+        <Map />
       </section>
     </main>
   );
